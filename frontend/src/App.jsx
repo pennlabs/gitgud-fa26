@@ -1,34 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+const facts = [
+  { label: 'Studies', value: 'Computer Science', note: 'in SEAS' },
+  { label: 'From', value: 'Houston, TX', note: '' },
+  { label: 'Member since', value: 'Spring 2026', note: '' },
+  { label: 'Graduates', value: '2029', note: '' },
+]
 
+function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <main className="page">
+      <section className="hero">
+        <div className="avatar" aria-hidden="true">CM</div>
+        <p className="eyebrow">Part of Penn Mobile</p>
+        <h1>Cassie Mai</h1>
+        <p className="role">Android Mobile Engineer</p>
+        <p className="intro">Hi! I'm Cassie. I'm in the Android team.</p>
+      </section>
+
+      <section className="facts" aria-label="About Cassie">
+        {facts.map((f) => (
+          <div className="fact" key={f.label}>
+            <span className="fact-label">{f.label}</span>
+            <span className="fact-value">{f.value}</span>
+            {f.note && <span className="fact-note">{f.note}</span>}
+          </div>
+        ))}
+      </section>
+
+      <footer>Cassie Mai · Penn Mobile · Android</footer>
+    </main>
   )
 }
 
