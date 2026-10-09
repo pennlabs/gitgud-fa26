@@ -40,3 +40,11 @@
 .read-the-docs {
   color: #888;
 }
+
+.hero-image {
+  display: block;
+  margin: 2em auto;
+  max-width: 100%;
+  width: 600px;
+  height: auto;
+}
